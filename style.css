@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(50, 50, 50);
+  color: white;
+}
+
 .container {
   padding: 16px 32px;
   display: flex;
@@ -7,11 +12,15 @@
 }
 
 .calculator {
-  background-color: rgb(70, 100, 150);
+  background-color: rgb(30, 30, 30);
   width: 300px;
-  height: 450px;
+  height: 420px;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px black;
 }
 
 .buttons {
@@ -22,19 +31,54 @@
 
 .button-clear,
 .button-delete,
+.button-operator,
 .button {
   padding: 8px 16px;
   font-size: 1.5rem;
   margin: 4px;
+  border: 2px solid #000;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px black;
+  color: white;
 }
 
 .button {
+  background-color: rgb(39, 39, 39);
   width: 60px;
+}
+
+.button:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.button-operator {
+  background-color: rgb(39, 79, 39);
+  width: 60px;
+}
+
+.button-operator:hover {
+  background-color: rgb(70, 100, 70);
 }
 
 .button-clear,
 .button-delete {
-  width: 120px;
+  width: 130px;
+}
+
+.button-clear {
+  background-color: rgb(129, 39, 39);
+}
+
+.button-delete {
+  background-color: rgb(39, 39, 99);
+}
+
+.button-clear:hover {
+  background-color: rgb(150, 70, 70);
+}
+
+.button-delete:hover {
+  background-color: rgb(70, 70, 120);
 }
 
 .display {
@@ -47,5 +91,16 @@
 
 .operation-row,
 .input-row {
-  height: 45px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+.operation-row {
+  font-size: 1.2rem;
+}
+
+.input-row {
+  font-size: 1.7rem;
 }
