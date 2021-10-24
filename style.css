@@ -1,24 +1,51 @@
 .container {
   padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
   background-color: rgb(70, 100, 150);
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-clear,
+.button-delete,
+.button {
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  margin: 4px;
 }
 
 .button {
-  padding: 8px 16px;
+  width: 60px;
+}
+
+.button-clear,
+.button-delete {
   width: 120px;
-  font-size: 1.5rem;
 }
 
 .display {
-  color: white;
+  color: black;
+  background-color: rgb(189, 240, 166);
+  border: 7px groove black;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.operation-row,
+.input-row {
+  height: 45px;
 }
