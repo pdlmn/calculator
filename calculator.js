@@ -71,7 +71,8 @@ function calculate(e) {
     } else {
       calculator.inputedNum = Number(inputDiv.textContent);
       if (calculator.inputedNum === 0) {
-        alert('You can't divide by 0!) return 
+        alert("You can't divide by 0!"); 
+        return 
       }
       if (operator) {
         calculator.accumulatorNum = toPrescisionOfThree(calculator[operator]());
@@ -87,7 +88,8 @@ function equalsTo(e) {
 
   calculator.inputedNum = Number(inputDiv.textContent);
   if (calculator.inputedNum === 0) {
-    alert('You can't divide by 0!) return 
+    alert("You can't divide by 0!");
+    return
   }
   calculator.accumulatorNum = toPrescisionOfThree(calculator[operator]());
   operator = '';
