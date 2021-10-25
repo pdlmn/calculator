@@ -25,6 +25,8 @@ const calculator = {
   }
 }
 
+initialize();
+
 function addDigitToDisplay(e) {
   if (e.type === 'keydown') {
     digitButton = document.querySelector(`[data-digit="${e.key}"]`);
@@ -75,31 +77,6 @@ function calculate(e) {
   }
 }
 
-function toPrescisionOfThree(num) {
-  return Math.round((num + Number.EPSILON) * 1000) / 1000
-}
-
-function changeOperator(e) {
-  if (e.type === 'click') {
-    operator = e.target.dataset.operator;
-  } else if (e.type === 'keydown' && operatorKeys.includes(e.key)) {
-    operatorButton = document.querySelector(`[data-key-operator="${e.key}"]`);
-    operator = operatorButton.dataset.operator;
-  }
-}
-
-function updateDisplay(e) {
-  if (e.type === 'click') {
-    operationDiv.textContent = `${calculator.accumulatorNum} ${e.target.textContent} `;
-    inputDiv.textContent = '';
-  } else if (e.type === 'keydown') {
-    operatorButton = document.querySelector(`[data-key-operator="${e.key}"]`);
-    if (!operatorButton) return
-    operationDiv.textContent = `${calculator.accumulatorNum} ${operatorButton.textContent} `;
-    inputDiv.textContent = '';
-  }
-}
-
 function equalsTo(e) {
   if (!calculator.accumulatorNum ||
       !inputDiv.textContent ||
@@ -115,20 +92,48 @@ function equalsTo(e) {
   delete calculator.accumulatorNum;
 }
 
+function toPrescisionOfThree(num) {
+  return Math.round((num + Number.EPSILON) * 1000) / 1000
+}
 
-clearButton.addEventListener('click', clear);
-window.addEventListener('keydown', clear);
+function changeOperator(e) {
+  if (e.type === 'click') {
+    operator = e.target.dataset.operator;
+  } else if (e.type === 'keydown' && operatorKeys.includes(e.key)) {
+    operatorButton = document.querySelector(`[data-key-operator="${e.key}"]`);
+    operator = operatorButton.dataset.operator;
+  }
+}
 
-digitButtons.forEach(button => button.addEventListener('click', addDigitToDisplay));
-deleteButton.addEventListener('click', deleteDigit);
-equalsButton.addEventListener('click', equalsTo);
-window.addEventListener('keydown', addDigitToDisplay);
-window.addEventListener('keydown', deleteDigit);
-window.addEventListener('keydown', equalsTo);
+function updateDisplay(e) {
+  if (!inputDiv.textContent && !calculator.accumulatorNum) return
 
-operatorButtons.forEach(button => button.addEventListener('click', calculate));
-operatorButtons.forEach(button => button.addEventListener('click', updateDisplay));
-operatorButtons.forEach(button => button.addEventListener('click', changeOperator));
-window.addEventListener('keydown', calculate);
-window.addEventListener('keydown', updateDisplay);
-window.addEventListener('keydown', changeOperator);
+  if (e.type === 'click') {
+    operationDiv.textContent = `${calculator.accumulatorNum} ${e.target.textContent} `;
+    inputDiv.textContent = '';
+  } else if (e.type === 'keydown') {
+    operatorButton = document.querySelector(`[data-key-operator="${e.key}"]`);
+    if (!operatorButton) return
+    operationDiv.textContent = `${calculator.accumulatorNum} ${operatorButton.textContent} `;
+    inputDiv.textContent = '';
+  }
+}
+
+function initialize() {
+  clearButton.addEventListener('click', clear);
+  window.addEventListener('keydown', clear);
+
+  digitButtons.forEach(button => button.addEventListener('click', addDigitToDisplay));
+  deleteButton.addEventListener('click', deleteDigit);
+  equalsButton.addEventListener('click', equalsTo);
+  window.addEventListener('keydown', addDigitToDisplay);
+  window.addEventListener('keydown', deleteDigit);
+  window.addEventListener('keydown', equalsTo);
+
+  operatorButtons.forEach(button => button.addEventListener('click', calculate));
+  operatorButtons.forEach(button => button.addEventListener('click', updateDisplay));
+  operatorButtons.forEach(button => button.addEventListener('click', changeOperator));
+  window.addEventListener('keydown', calculate);
+  window.addEventListener('keydown', updateDisplay);
+  window.addEventListener('keydown', changeOperator);
+}

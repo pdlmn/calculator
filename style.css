@@ -27,10 +27,14 @@ body {
   align-items: center;
 }
 
+.instructions {
+  justify-self: flex-start;
+}
+
 .calculator {
   background-color: rgb(30, 30, 30);
   width: 300px;
-  height: 410px;
+  height: 445px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -107,7 +111,7 @@ body {
 
 .operation-row,
 .input-row {
-  height: 30px;
+  height: 45px;
   display: flex;
   align-items: center;
   padding: 0px 12px;
