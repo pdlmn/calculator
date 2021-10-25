@@ -6,51 +6,65 @@
     <link rel="stylesheet" href="style.css" media="all">
     <script src="calculator.js" defer></script>
   </head>
-  <body class="container">
+  <body>
 
-    <header>Calculator!</header>
+    <header class="header">
+      <h1>Calculator.</h1>
+      <p>Calculator has keyboard support.</p>
+      <ul>
+        <li>Press homerow digit to add digit.</li>
+        <li>+, -, *, : for operators.</li>
+        <li>= for the result.</li>
+        <li><em>Backspace</em> to delete digit.</li>
+        <li><em>Shift+Backspace</em> to clear the screen.</li>
+      </ul>
+    </header>
 
-    <main>
+    <main class="container">
 
-      <div class="calculator">
+      <div class="calculator-wrapper">
 
-        <div class="display">
-          <div class="operation-row" id="operation-row"><br></div>
-          <div class="input-row" id="input-row"><br></div>
-        </div>
+        <div class="calculator">
+
+          <div class="display">
+            <div class="operation-row" id="operation-row"><br></div>
+            <div class="input-row" id="input-row"><br></div>
+          </div>
 
 
-        <div class="buttons">
+          <div class="buttons">
 
-          <button class="button-clear" id="clear">clear</button>
-          <button class="button-delete" id="delete">delete</button>
+            <button class="button-clear" id="clear">clear</button>
+            <button class="button-delete" id="delete">delete</button>
 
-          <button class="button" data-digit="7">7</button>
-          <button class="button" data-digit="8">8</button>
-          <button class="button" data-digit="9">9</button>
-          <button class="button-operator" data-operator="divide">÷</button>
+            <button class="button" data-digit="7">7</button>
+            <button class="button" data-digit="8">8</button>
+            <button class="button" data-digit="9">9</button>
+            <button class="button-operator" data-operator="divide" data-key-operator=":">÷</button>
 
-          <button class="button" data-digit="4">4</button>
-          <button class="button" data-digit="5">5</button>
-          <button class="button" data-digit="6">6</button>
-          <button class="button-operator" data-operator="multiply">×</button>
+            <button class="button" data-digit="4">4</button>
+            <button class="button" data-digit="5">5</button>
+            <button class="button" data-digit="6">6</button>
+            <button class="button-operator" data-operator="multiply" data-key-operator="*">×</button>
 
-          <button class="button" data-digit="1">1</button>
-          <button class="button" data-digit="2">2</button>
-          <button class="button" data-digit="3">3</button>
-          <button class="button-operator" data-operator="subtract">-</button>
+            <button class="button" data-digit="1">1</button>
+            <button class="button" data-digit="2">2</button>
+            <button class="button" data-digit="3">3</button>
+            <button class="button-operator" data-operator="subtract" data-key-operator="-">-</button>
 
-          <button class="button" data-digit=".">.</button>
-          <button class="button" data-digit="0">0</button>
-          <button class="button-operator" data-operator="add">+</button>
-          <button class="button-operator" id="equals">=</button>
+            <button class="button" data-digit=".">.</button>
+            <button class="button" data-digit="0">0</button>
+            <button class="button-operator" data-operator="add" data-key-operator="+">+</button>
+            <button class="button-operator" id="equals">=</button>
+          </div>
+
         </div>
 
       </div>
 
     </main>
 
-    <footer></footer>
+    <footer class="footer">Made by pdlmn &copy 2021</footer>
 
   </body>
 </html>
