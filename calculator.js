@@ -70,6 +70,9 @@ function calculate(e) {
       calculator.accumulatorNum = Number(inputDiv.textContent);
     } else {
       calculator.inputedNum = Number(inputDiv.textContent);
+      if (calculator.inputedNum === 0) {
+        alert('You can't divide by 0!) return 
+      }
       if (operator) {
         calculator.accumulatorNum = toPrescisionOfThree(calculator[operator]());
       }
@@ -83,6 +86,9 @@ function equalsTo(e) {
       e.type === 'keydown' && e.key !== '=') return
 
   calculator.inputedNum = Number(inputDiv.textContent);
+  if (calculator.inputedNum === 0) {
+    alert('You can't divide by 0!) return 
+  }
   calculator.accumulatorNum = toPrescisionOfThree(calculator[operator]());
   operator = '';
 
