@@ -11,19 +11,11 @@ const operatorKeys = ['+', '-', '*', ':'];
 let operator = '';
 
 const calculator = {
-  'add': function() {
-    return this.accumulatorNum + this.inputedNum;
-  },
-  'subtract': function() {
-    return this.accumulatorNum - this.inputedNum;
-  },
-  'multiply': function() {
-    return this.accumulatorNum * this.inputedNum;
-  },
-  'divide': function() {
-    return this.accumulatorNum / this.inputedNum;
-  }
-}
+  'add':      function() { return this.accumulatorNum + this.inputedNum },
+  'subtract': function() { return this.accumulatorNum - this.inputedNum },
+  'multiply': function() { return this.accumulatorNum * this.inputedNum },
+  'divide':   function() { return this.accumulatorNum / this.inputedNum }
+};
 
 initialize();
 
